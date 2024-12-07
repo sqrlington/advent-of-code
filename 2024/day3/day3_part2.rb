@@ -1,15 +1,12 @@
 # Regex pattern with capture groups
-pattern = /^(.*?)don't|(do\b(.*?)don't)|do\b(.*)$/
 capture_multiples = /mul\((\d+),(\d+)\)/
-yeet = /don't.*?do\b|don't.*?$/
+yeet = /don't\(\).*?do\(\)|don't\(\).*?$/
 
-result = File.read("puzzle_input.txt")
-  .split("\n")
-  .map {|garbage| garbage.gsub(yeet, "")}
-  .map {|tuples| tuples.scan(capture_multiples)}
-  .flatten(1)
+input = File.read("puzzle_input.txt").gsub("\n", "").gsub(yeet, "")
+
+result = input.scan(capture_multiples)
   .map {|strings| strings.map(&:to_i)}
   .map {|x, y| x*y}
   .sum
 
-puts "#{result.size}"
+puts "#{result}"
