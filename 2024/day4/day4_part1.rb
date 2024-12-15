@@ -60,7 +60,7 @@ end
 word_search = File.read("puzzle_input.txt").split("\n").map(&:chars)
 
 if word_search.size != word_search[0].size
-  puts "puzzle is not a matrix, FAIL"
+  puts "puzzle is not a square matrix, FAIL"
 end
 
 h_matches = horizontal_search(word_search)
