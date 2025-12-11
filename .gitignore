@@ -1,0 +1,11 @@
+# Advent of Code puzzle inputs (personalized, should not be shared)
+puzzle_input.txt
+input.txt
+**/puzzle_input.txt
+**/input.txt
+
+# Any file with "input" in the name (except example/sample)
+*input*.txt
+!*example*.txt
+!*sample*.txt
+
